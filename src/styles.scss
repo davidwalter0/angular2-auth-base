@@ -1,0 +1,55 @@
+
+a:before {
+  /* content: "\E315"; */
+  font-family: 'Material Icons';
+  vertical-align: bottom;
+}
+
+app-root > .loading {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    position: relative;
+    top: 25vh;
+}
+
+app-root  .text-container {
+    text-align: left;
+    display:inline-block;
+    padding: 0 5px;
+}
+
+@media screen and (max-width: 1024px) {
+    .mdl-layout__drawer-button {
+        line-height: 47px;
+        color: #000;
+    }
+}
+
+.mdl-card {
+    padding: 5px;
+    margin: 5px;
+}
+
+.sliding-drawer {
+    top: 9%; 
+    background: rgb(63,81,181);
+    color: #FFF; 
+    border: 1px solid rgb(63,81,181);
+    height: 90%;
+}
+
+mdl-layout-header > *  .mdl-navigation .mdl-navigation__link,
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+  z-index: 1;
+  background: rgb(63,81,181);
+  color: #FFF;
+}
+
+mdl-layout-header > *  .mdl-navigation .mdl-navigation__link:hover,
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+  z-index: 1;
+  background: #AFA8EA;
+  color: #FFF;
+}
+

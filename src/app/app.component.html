@@ -1,0 +1,135 @@
+<script>
+  function close() {
+    var d = document.querySelector('.mdl-layout');
+    d.MaterialLayout.toggleDrawer();
+  }
+
+  document.querySelector('.').addEventListener('click', close);
+</script>
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <mdl-layout-title>{{ title }}</mdl-layout-title>
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+        <a routerLinkActive="active" 
+           skipLocationChange="true"
+           class="mdl-navigation__link" routerLink="">Home</a>
+        <a
+           skipLocationChange="true"
+           *ngIf="authorized()"
+           routerLinkActive="active" 
+           routerLink="/logged-out"
+           (click)="logout()"
+           class="mdl-navigation__link"
+           aria-hidden="true">
+          Logout
+        </a>
+        <a
+           skipLocationChange="true"
+           *ngIf="!authorized()"
+           routerLinkActive="active"
+           routerLink="/logged-in"
+           (click)="loginGoogle()"
+           class="mdl-navigation__link"
+           aria-hidden="true">
+          Login
+        </a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer mdl-cell--hide-desktop" >
+    <span class="mdl-layout-title">{{ title }}</span>
+    <nav class="mdl-navigation">
+      <a
+         skipLocationChange="true"
+         routerLinkActive="active"
+         class="mdl-navigation__link" routerLink="">Home</a>
+      <a skipLocationChange="true"
+         *ngIf="authorized()"
+         routerLink="/logged-out"
+         routerLinkActive="active"
+         (click)="logout()"
+         class="mdl-navigation__link"
+         aria-hidden="true">
+        Logout
+      </a>
+      <a skipLocationChange="true"
+         *ngIf="!authorized()"
+         routerLinkActive="active"
+         routerLink="/logged-in"
+         (click)="loginGoogle()"
+         class="mdl-navigation__link"
+         aria-hidden="true">
+        Login
+      </a>
+
+    </nav>
+  </div>
+
+  <div class="sliding-drawer mdl-layout__drawer"
+       mdl-cell--view-desktop
+       style="top: 4em;">
+    <span class="mdl-layout-title">{{ title }}</span>
+    <nav class="mdl-navigation">
+      <a
+         skipLocationChange="true"
+         routerLinkActive="active"
+         class="mdl-navigation__link" routerLink="">Home</a>
+      <a skipLocationChange="true"
+         *ngIf="authorized()"
+         routerLinkActive="active"
+         routerLink="/logged-out"
+         (click)="logout()"
+         class="mdl-navigation__link"
+         aria-hidden="true">
+        Logout
+      </a>
+      <a skipLocationChange="true"
+         *ngIf="!authorized()"
+         routerLinkActive="active"
+         routerLink="/logged-in"
+         (click)="loginGoogle()"
+         class="mdl-navigation__link"
+         aria-hidden="true">
+        Login
+      </a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content" style="height: 90%; width:100%;">
+    <router-outlet></router-outlet>
+  </main>
+  <!-- <footer  class="mdl-mini-footer mdl-color--primary mdl-layout--large-screen-only" style="z-index: 999;"> -->
+  <!--   <div class="mdl-mini-footer__left-section"> -->
+  <!--     <div class="mdl-logo"> -->
+  <!--       © Copyright Information -->
+  <!--     </div> -->
+  <!--     <ul class="mdl-mini-footer__link-list  mdl-color--primary"> -->
+  <!--       <li><a href="#">Help</a></li> -->
+  <!--       <li><a href="#">Privacy and Terms</a></li> -->
+  <!--       <li><a href="#">User Agreement</a></li> -->
+  <!--     </ul> -->
+  <!--   </div> -->
+  <!--   <div class="mdl-mini-footer__right-section  mdl-color--primary"> -->
+  <!--     <button type="submit" style="color: #fff"class="mdl-button mdl-button--raised mdl-mini-footer__social-btn mdl-color--primary" mdl-ripple>No/Op</button> -->
+  <!--     <button type="submit" style="color: #fff"class="mdl-button mdl-button--raised mdl-mini-footer__social-btn mdl-color--primary" mdl-ripple>2</button> -->
+  <!--     <button type="submit" style="color: #fff"class="mdl-button mdl-button--raised mdl-mini-footer__social-btn mdl-color--primary" mdl-ripple>3</button> -->
+  <!--   </div> -->
+  <!-- </footer> -->
+</div>
+
+<!-- <style> -->
+<!-- footer { -->
+<!--   position: absolute; -->
+<!--   right: 0; -->
+<!--   height: 2em; -->
+<!--   bottom: 2em; -->
+<!--   margin-bottom: -2em; -->
+<!--   left: 0; -->
+<!--   padding: 1em; -->
+<!--   z-index: 999; -->
+<!-- } -->
+<!-- </style> -->
+
+
