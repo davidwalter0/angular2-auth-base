@@ -1,0 +1,58 @@
+.qrcode {
+  object-fit: cover;
+  width: 15rem;
+  height: 15rem;
+  align: center
+}
+
+.avatar {
+  object-fit: cover;
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (min-width:320px)  { 
+/* smartphones, iPhone, portrait 480x320 phones */ 
+  .qrcode {
+    object-fit: cover;
+    width: 12rem;
+    height: 12rem;
+    align: center
+  }
+
+  .avatar {
+    object-fit: cover;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (min-width:400px)  { 
+  .qrcode {
+    object-fit: cover;
+    width: 15rem;
+    height: 15rem;
+    align: center
+  }
+
+  .avatar {
+    object-fit: cover;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (min-width:485px)  { 
+  .qrcode {
+    object-fit: cover;
+    width: 18rem;
+    height: 18rem;
+    align: center
+  }
+
+  .avatar {
+    object-fit: cover;
+    width: 3rem;
+    height: 3rem;
+  }
+}

@@ -1,16 +1,62 @@
-<mdl-card
-   style="top: 10em;"
-   mdl-shadow="3"
-   class="mdl-color--indigo-50 mdl-cell--12-col mdl-cell--3-offset-desktop mdl-cell--6-col-desktop" >
-
-  <div class="mdl-card__content">
-    <div style="text-align:center;">
-      <br>
-      <br>
-      <br>
-      <em>
-        <h5>Authenticated Content</h5>
-      </em>
+<div class="mdl-card"
+     style="top: 10em; height:95%;"
+     mdl-shadow="3"
+     class="mdl-color--indigo-50 mdl-card--expand
+            mdl-cell--6-col-desktop mdl-cell mdl-cell--12-col mdl-cell--3-offset-desktop" >
+	<div class="mdl-card__title mdl-card--expand">
+    <div class="mdl-cell--7-col-phone
+                mdl-cell--8-col-tablet
+                mdl-cell--4-col-desktop"
+         *ngIf="qrtext">
+      <img class="qrcode mdl-center" src="{{url}}{{qrtext}}&size=300">
+    </div>
+    <div class="mdl-cell--7-col-phone
+                mdl-cell--8-col-tablet
+                mdl-cell--4-col-desktop"
+         *ngIf="!qrtext">
+      <img class="qrcode" src="src/app/sphere/favicon.ico">
     </div>
   </div>
-</mdl-card>
+  <div class="mdl-card__content mdl-card--expand">
+    <form #subscriptionForm="ngForm">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+        <textarea
+           class="mdl-textfield__input"
+           [(ngModel)]="text"
+           type="text"
+           rows= "4"
+           pattern="[ a-zA-Z0-9!@#$%^&*()-_=+:;<>,.?/]+" name="text">
+        </textarea>
+        <label class="mdl-textfield__label" for="text">Encode this text</label>
+        <span class="mdl-textfield__error">Input is empty</span>
+      </div>
+      <button mdl-button
+              type="submit"
+              mdl-button-type="raised"
+              mdl-ripple
+              mdl-colored="primary"
+              (click)="encode(text)"
+              float-center
+              class="mdl-cell mdl-cell--12-col"
+              >
+        QREncode
+      </button>
+      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-cell mdl-cell--12-col" for="switch-1">
+        <input type="checkbox" [(ngModel)]="userInfo" name="userInfo" id="switch-1" class="mdl-switch__input" checked>
+        <span class="mdl-switch__label">Include login user/email</span>
+      </label>
+    </form>
+    <div class="mdl-cell mdl-cell--6-col">
+      <img class="avatar" src="{{image}}">
+      <ul style="list-style-type: none; margin: 0; padding: 0; display: inline-block; float:right;" >
+        <li>
+          {{name}}
+        </li>
+        <li>
+          {{email}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
