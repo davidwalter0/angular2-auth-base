@@ -20,6 +20,7 @@ is activated.
 ```
     git clone github.com/davidwalter0/angular2-auth-base
     cd angular2-auth-base
+    npm install --save
     ng serve 
 ```
 
