@@ -47,11 +47,16 @@ img.qrcode {
               >
         QREncode
       </button>
-      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-cell mdl-cell--12-col" for="switch-1">
-        <input type="checkbox" [(ngModel)]="userInfo" name="userInfo" id="switch-1" class="mdl-switch__input" checked>
-        <span class="mdl-switch__label">Include login user/email</span>
-      </label>
+      <ul style="list-style-type: none; margin: 0; padding-left: 1em; display: inline-block; float:left;" >
+        <li>
+          <mdl-switch [(ngModel)]="userInfo" name="userInfo" id="switch-1" class="mdl-switch__input">
+            <span class="mdl-switch__label">Include login user/email</span>
+          </mdl-switch>
+        </li>
+      </ul>
+      <br/>
     </form>
+    <hr>
     <div class="mdl-cell mdl-cell--6-col">
       <img class="avatar" src="{{image}}">
       <ul style="list-style-type: none; margin: 0; padding: 0; display: inline-block; float:right;" >

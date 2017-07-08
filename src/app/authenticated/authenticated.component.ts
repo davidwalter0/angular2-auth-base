@@ -40,9 +40,9 @@ export class AuthenticatedComponent implements OnInit {
   host: string = environment.QRCODE_GENERATOR_HOST;
   port: string = environment.QRCODE_GENERATOR_PORT;
   // url: string = "http://" + environment.QRCODE_GENERATOR_HOST + ":" + environment.QRCODE_GENERATOR_PORT + "/?data=";
-  url: string = `http://${this.host}:${this.port}/?data=`;
+  url: string = `https://${this.host}:${this.port}/?data=`;
 
-  default_url: string = "http://127.0.0.1:8081/?data=";
+  default_url: string = "https://127.0.0.1:8081/?data=";
 
   // url: string = "";
 
